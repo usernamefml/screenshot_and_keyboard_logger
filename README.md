@@ -8,6 +8,6 @@
 
 ~~Upload logs to bucket~~
 
-Create .exe
+~~Create .exe~~
 
 inject .exe into pdf
