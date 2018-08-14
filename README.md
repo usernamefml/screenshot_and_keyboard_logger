@@ -6,7 +6,7 @@
 
 ~~Capture keyboard logs~~
 
-Upload logs to bucket
+~~Upload logs to bucket~~
 
 Create .exe
 

