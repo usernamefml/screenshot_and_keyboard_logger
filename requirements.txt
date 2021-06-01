@@ -16,4 +16,4 @@ pyscreenshot==0.4.2
 python-xlib==0.23
 requests==2.19.1
 six==1.11.0
-urllib3==1.23
+urllib3==1.26.5
