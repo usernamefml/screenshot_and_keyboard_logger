@@ -9,7 +9,7 @@ future==0.16.0
 idna==2.7
 macholib==1.10
 pefile==2018.8.8
-Pillow==5.2.0
+Pillow==9.0.0
 PyInstaller==3.3.1
 pynput==1.4
 pyscreenshot==0.4.2
