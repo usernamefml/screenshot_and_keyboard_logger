@@ -10,7 +10,7 @@ idna==2.7
 macholib==1.10
 pefile==2018.8.8
 Pillow==9.0.1
-PyInstaller==3.3.1
+PyInstaller==3.6
 pynput==1.4
 pyscreenshot==0.4.2
 python-xlib==0.23
