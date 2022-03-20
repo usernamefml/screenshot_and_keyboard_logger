@@ -14,6 +14,6 @@ PyInstaller==3.3.1
 pynput==1.4
 pyscreenshot==0.4.2
 python-xlib==0.23
-requests==2.19.1
+requests==2.20.0
 six==1.11.0
 urllib3==1.26.5
